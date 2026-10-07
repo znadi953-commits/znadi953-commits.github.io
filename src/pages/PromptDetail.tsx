@@ -15,9 +15,7 @@ import { apiGet, apiPost, fmtPrice, type Prompt, type Review } from '../lib/api'
 import PromptCard from '../components/PromptCard';
 
 /** Aperçus vidéo démontrant les prompts vidéo (générés avec la technique du prompt). */
-const VIDEO_PREVIEWS: Record<number, string> = {
-  75: '/videos/temps-fige.mp4',
-};
+const VIDEO_PREVIEWS: Record<number, string> = {};
 
 /** Démos interactives par prompt. */
 const DEMO_LINKS: Record<number, string> = {

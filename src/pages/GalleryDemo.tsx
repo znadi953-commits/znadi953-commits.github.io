@@ -4,16 +4,13 @@ import { apiGet, fmtPrice, type Prompt } from '../lib/api';
 import './GalleryDemo.css';
 
 /** Vidéos de démonstration par prompt (comme sur la fiche produit). */
-const VIDEO_PREVIEWS: Record<number, string> = {
-  75: '/videos/temps-fige.mp4',
-};
+const VIDEO_PREVIEWS: Record<number, string> = {};
 
-type SetKey = 'catalogue' | 'tendances' | 'video';
+type SetKey = 'catalogue' | 'tendances';
 
 const LABELS: Record<SetKey, string> = {
   catalogue: 'Catalogue NADIPROMTES',
   tendances: 'Sélection tendances',
-  video: 'Prompts vidéo IA',
 };
 
 const HeartIcon = () => (
@@ -50,7 +47,6 @@ export default function GalleryDemo() {
     () => ({
       catalogue: [...prompts].sort((a, b) => b.id - a.id),
       tendances: prompts.filter((p) => p.trending),
-      video: prompts.filter((p) => p.categories?.slug === 'video-ia' || VIDEO_PREVIEWS[p.id]),
     }),
     [prompts],
   );
@@ -133,16 +129,6 @@ export default function GalleryDemo() {
         </svg>
       ),
     },
-    {
-      key: 'video',
-      label: 'Vidéo',
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}>
-          <rect x="2" y="5" width="20" height="14" rx="3" />
-          <path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none" />
-        </svg>
-      ),
-    },
   ];
 
   return (
@@ -155,7 +141,7 @@ export default function GalleryDemo() {
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-noir-100/60">
           Le mockup du prompt N°71 rendu vivant avec les vrais projets du catalogue : faites défiler les
-          cartes, lancez le clip du prompt vidéo « Temps Figé » et ouvrez les fiches produits.
+          cartes et ouvrez les fiches produits en un clic.
         </p>
         <Link
           to="/prompt/71"
