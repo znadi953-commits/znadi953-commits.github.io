@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      /* SPA GitHub Pages : restauration du path après redirect 404.html */
+      (function () {
+        try {
+          var r = sessionStorage.getItem('spa-redirect');
+          if (r) {
+            sessionStorage.removeItem('spa-redirect');
+            history.replaceState(null, '', r);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/images/logo-nadipromtes-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NADIPROMTES — La marketplace premium des prompts IA. Achetez des prompts testés et notés, ou vendez vos créations à 85 %."
+    />
+    <!-- Open Graph / partages Instagram, WhatsApp, X -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NADIPROMTES" />
+    <meta property="og:title" content="NADIPROMTES — Marketplace premium de prompts IA" />
+    <meta
+      property="og:description"
+      content="81 prompts testés et notés (Midjourney, Nano Banana, Seedance 2.0…) · vidéos démo · programme d'affiliation 15 %."
+    />
+    <meta property="og:image" content="/images/logo-nadipromtes.png" />
+    <meta property="og:image:alt" content="Logo NADIPROMTES — couronne or et lettres violettes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NADIPROMTES — Marketplace premium de prompts IA" />
+    <meta
+      name="twitter:description"
+      content="Prompts IA testés et notés, vidéos démo et affiliation 15 %. Rejoignez la communauté."
+    />
+    <meta name="twitter:image" content="/images/logo-nadipromtes.png" />
+    <meta name="theme-color" content="#08060b" />
+    <title>NADIPROMTES — Marketplace premium de prompts IA</title>
+    <script type="module" crossorigin src="/assets/index-BluBigUb.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DMcIybCy.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
